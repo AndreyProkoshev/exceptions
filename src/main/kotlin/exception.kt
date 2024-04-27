@@ -112,7 +112,7 @@ object WallService {
                 return newComment
             }
         }
-        return null
+        return throw PostNotFound("No post with $postId")
     }
 
 

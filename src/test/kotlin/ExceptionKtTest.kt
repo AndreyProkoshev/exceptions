@@ -1,5 +1,4 @@
 import org.junit.Test
-
 import org.junit.Assert.*
 import org.junit.Before
 
@@ -18,10 +17,12 @@ class ExceptionKtTest {
     @Test
     fun createComment() {
         val post = Post(
-            2, 1, 1, 1, 1,
+            1, 1, 1, 1, 1,
             "Hi", 1, false, true, 2,
         )
-        val result = WallService.createComment(2, Comment(2, 2, 3, "Hello"))
+        WallService.add(post)
+        val comment = Comment(2, 2, 3, "Hello")
+        val result = WallService.createComment(post.id,comment)
         assertNotNull(result)
     }
 }
